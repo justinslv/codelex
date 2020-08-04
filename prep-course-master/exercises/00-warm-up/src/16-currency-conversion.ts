@@ -9,15 +9,26 @@ export {};
  * Find a way to add 1% to all currency conversions (think about the DRY (don't repeat yourself) principle)
  */
 
-// You are allowed to change this function
-function convertToUSD(price) {}
-// You are allowed to change this function
-function convertToBRL(price) {}
+ const FEE = 1.01
+ const USD_RATE = 1.4
+ const BRL_RATE = 6.9
+// // You are allowed to change this function
+// function convertToUSD(price: number) {
+//     return ((price * 1.4) * FEE).toFixed(2)
+// }
+// // You are allowed to change this function
+// function convertToBRL(price: number) {
+//     return ((price * 6.9) * FEE).toFixed(2)
+// }
+
+function convert(price: number, rate: number){
+    return ((price * rate) * FEE).toFixed(2)
+}
 
 const product = "You don't know JS";
 const price = 12.5;
-const priceInUSD = convertToUSD(price);
-const priceInBRL = convertToBRL(price);
+const priceInUSD = convert(price, USD_RATE);
+const priceInBRL = convert(price, BRL_RATE);
 
 console.log("Product: " + product);
 console.log("Price: $" + priceInUSD);
