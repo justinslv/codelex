@@ -1,6 +1,6 @@
 export {};
 
-const helloWorld = function() {
+const helloWorld = function(test) {
   return "";
 };
 
